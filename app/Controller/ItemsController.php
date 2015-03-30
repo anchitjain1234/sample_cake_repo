@@ -37,12 +37,14 @@
 		{
 			if(!$id)
 			{
+				echo "here1";
 				throw new NotFoundException(__("Invalid Movie")); 
 			}
 			$data=$this->Item->findById($id);
 
 			if(!$data)
 			{
+				echo "here2";
 				throw new NotFoundException(__("Invalid Movie"));
 			}
 			$this->loadModel('User');
