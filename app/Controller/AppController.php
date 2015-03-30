@@ -1,4 +1,6 @@
 <?php
+App::uses('AppController', 'Controller');
+    App::uses('CakeEmail', 'Network/Email');
 /**
  * Application level Controller
  *
@@ -31,4 +33,39 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    
+	public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'items',
+                'action' => 'index'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'display',
+                'home'
+            ),
+            'authenticate' => array(
+                'Form' => array(
+                    'passwordHasher' => 'Blowfish'
+                )
+            )
+        )
+    );
+
+    public function beforeFilter() {
+        
+        $this->Auth->allow('index', 'view');
+    }
+
+    public function sendemail($email,$sub,$message)
+    {
+        $Email=new CakeEmail('mandrill');
+        $Email->to($email);
+        $Email->subject($sub);
+        $Email->send($message);
+    }
+
+    
 }
