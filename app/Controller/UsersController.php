@@ -26,6 +26,7 @@
         {
             $this->User->create();
             $this->request->data['User']['usergroup']='nonadmin';
+            $this->request->data['User']['password_repeat']=$this->request->data['User']['password'];
             if ($this->User->save($this->request->data)) 
             {
                 $this->loadModel('Verify');
