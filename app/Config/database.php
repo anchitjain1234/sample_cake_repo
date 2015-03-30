@@ -75,8 +75,8 @@ class DATABASE_CONFIG {
         'prefix' => '',
         'persistent' => 'true',
         // optional auth fields
-       'login' => 'anchit', 
-        'password' => 'fuckoff1234',
+       'login' => 'testuser', 
+        'password' => '12345678',
        /* 'replicaset' => array('host' => 'mongodb://hoge:hogehoge@localhost:27021,localhost:27022/blog', 
                               'options' => array('replicaSet' => 'myRepl')
                      ),
