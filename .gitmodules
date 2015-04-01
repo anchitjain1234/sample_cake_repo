@@ -1,3 +1,6 @@
 [submodule "app/Plugin/Mongodb"]
 	path = app/Plugin/Mongodb
 	url = git://github.com/ichikaway/cakephp-mongodb.git
+[submodule "app/Plugin/Sitemap"]
+	path = app/Plugin/Sitemap
+	url = git://github.com/loadsys/CakePHP-Sitemap.git

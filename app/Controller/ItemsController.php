@@ -29,7 +29,9 @@
 
 			if ($this->request->is('post'))
 			{
-				return $this->redirect('search/'.$this->request->data['Item']['query']);
+				//return $this->redirect(array('controller'=>'items','action'=>'search'));
+				return $this->redirect(array('controller' => 'items', 'action' => 'search',$this->request->data['Item']['query']));
+
 			}
 		}
 

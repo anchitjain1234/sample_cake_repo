@@ -126,6 +126,8 @@
 		return ($this->find('count', array('conditions' => array('username' => $this->data['User']['username']))) == 0);
 	}
 
+    
+
 }
 
 ?>
